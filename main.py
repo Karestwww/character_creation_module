@@ -1,16 +1,17 @@
 from random import randint
+from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         return (f'{char_name} нанёс урон противнику равный '
-                '{5 + randint(3, 5)}')
+                f'{5 + randint(3, 5)}')
     elif char_class == 'mage':
         return (f'{char_name} нанёс урон противнику равный '
-                '{5 + randint(5, 10)}')
+                f'{5 + randint(5, 10)}')
     elif char_class == 'healer':
         return (f'{char_name} нанёс урон противнику равный '
-                '{5 + randint(-3, -1)}')
+                f'{5 + randint(-3, -1)}')
     return (f'{char_name} не нанёс урон противнику')
 
 
@@ -84,6 +85,7 @@ def choice_char_class() -> str:
 
 
 def main():
+    run_screensaver()
     char_name: str = ''
     char_class: str = ''
 
@@ -98,4 +100,4 @@ def main():
     print(start_training(char_name, char_class))
 
 
-# Временно выключил main()
+main()
